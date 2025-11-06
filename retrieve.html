@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>retrieve.html</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div class="main-wrapper">
+  <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+  <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+  <i class="fas fa-bars fa-lg"></i> Menu
+  </button>
+<form class="d-flex align-items-center ms-auto" role="search" style="gap:10px;">
+  <input 
+    class="form-control me-2 search-box" 
+    type="search" 
+    placeholder="Search"
+  >
+
+  <i class="fas fa-moon fa-lg text-secondary theme-icon"></i>
+
+  <i class="fas fa-bell fa-lg text-secondary me-2"></i>
+
+  <img 
+    src="images/WhatsApp Image 2025-09-25 at 12.48.34 PM.jpeg"
+    class="profile-pic"
+    style="width:40px; height:40px; border-radius:50%; object-fit:cover;"
+  >
+</form>
+  </div>
+  </nav>
+  </nav>
+  <div class="sidebar d-none d-lg-block text-white bg-dark p-3">
+  <img src="images/logo (1).png" alt="" class="img-fluid mb-3 px-3">
+  <a href="index.html"><i class="fas fa-home me-2 text-white"></i> Dashboard</a>
+  <a href="scan-upload.html"><i class="fas fa-camera me-2 text-white"></i> Scan Documents</a>
+  <a href="osr.html"><i class="fas fa-file-alt me-2 text-white"></i> OCR Documents</a>
+  <a href="retrieve.html"><i class="fas fa-search me-2 text-white"></i> Retrieve Documents</a>
+  <a href="all-documents.html"><i class="fas fa-folder-open me-2 text-white"></i> All Documents</a>
+  <a href="archive-documents.html"><i class="fas fa-archive me-2 text-white"></i> Archive Documents</a>
+  <a href="user.html"><i class="fas fa-users-cog me-2 text-white"></i> User Management</a>
+  <a href="audit-document.html"><i class="fas fa-shield-alt me-2 text-white"></i> Audit Documents</a>
+  <a href="settings.html"><i class="fas fa-cog me-2 text-white"></i> Settings</a>
+  </div>
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
+  <div class="offcanvas-header">
+  <h5 class="offcanvas-title">Menu</h5>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+  <a href="index.html" class="d-block mb-2 text-white"><i class="fas fa-home me-2"></i> Dashboard</a>
+  <a href="scan-upload.html" class="d-block mb-2 text-white"><i class="fas fa-camera me-2"></i> Scan Documents</a>
+  <a href="osr.html" class="d-block mb-2 text-white"><i class="fas fa-file-alt me-2"></i> OCR Documents</a>
+  <a href="retrieve.html" class="d-block mb-2 text-white"><i class="fas fa-search me-2"></i> Retrieve Documents</a>
+  <a href="all-documents.html" class="d-block mb-2 text-white"><i class="fas fa-folder-open me-2"></i> All Documents</a>
+  <a href="archive-documents.html" class="d-block mb-2 text-white"><i class="fas fa-archive me-2"></i> Archive Documents</a>
+  <a href="user.html" class="d-block mb-2 text-white"><i class="fas fa-users-cog me-2"></i> User Management</a>
+  <a href="audit-document.html" class="d-block mb-2 text-white"><i class="fas fa-shield-alt me-2"></i> Audit Documents</a>
+  <a href="settings.html" class="d-block mb-2 text-white"><i class="fas fa-cog me-2"></i> Settings</a>
+  </div>
+  </div>
+  <div class="sidebar d-none d-lg-block text-white">
+  <img src="images/logo (1).png" alt="" class="img-fluid mb-3 px-3">
+  <a href="index.html"><i class="fas fa-home me-2 text-white"></i> Dashboard</a>
+  <a href="scan-upload.html"><i class="fas fa-camera me-2 text-white"></i> Scan Documents</a>
+  <a href="osr.html"><i class="fas fa-file-alt me-2 text-white"></i> OCR Documents</a>
+  <a href="retrieve.html"><i class="fas fa-search me-2 text-white"></i> Retrieve Documents</a>
+  <a href="all-documents.html"><i class="fas fa-folder-open me-2 text-white"></i> All Documents</a>
+  <a href="archive-documents.html"><i class="fas fa-archive me-2 text-white"></i> Archive Documents</a>
+  <a href="user.html"><i class="fas fa-users-cog me-2 text-white"></i> User Management</a>
+  <a href="audit-document.html"><i class="fas fa-shield-alt me-2 text-white"></i> Audit Documents</a>
+  <a href="settings.html"><i class="fas fa-cog me-2 text-white"></i> Settings</a>
+  </div>
+  <div class="main-content py-5">
+  <div class="content-box bg-white p-4 rounded shadow-sm">
+  <div class="mb-3">
+  <h5 class="fw-bold mb-0 text-start">Document</h5>
+  <small class="text-muted d-block text-start">Retrieve</small>
+  <hr class="mt-2 mb-4">
+  </div>
+  <div class="row g-4 justify-content-start">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">Finance Department</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">HR Documents</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">Digitizations</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">2020 to 2025</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">Management Data</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="card border-0 shadow-sm text-center p-3 rounded-3 square-card position-relative responsive-card">
+  <div class="three-dots">⋮</div>
+  <div class="card-body p-0 mb-2">
+  <p class="fw-semibold mb-1 text-start" style="font-size: 12px;">Solochoicez Pvt Ltd</p>
+  <p class="text-muted mb-0 text-start" style="font-size: 11px;">Employee Data</p>
+  </div>
+  <img src="images/Layer_1.png" alt="File" class="card-img-bottom">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <style>
+  @media (max-width: 768px) {
+    .responsive-card {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .responsive-card {
+      max-width: 130px;
+    }
+  }
+
+  .square-card {
+    background: rgba(0, 0, 0, 0.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+
+.main-content {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  margin-left: 225px; 
+}
+
+.content-box {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.square-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #edeef3;
+}
+
+.square-card .card-img-bottom {
+  width: 100%;
+  height: 55%;
+  object-fit: contain;
+}
+
+.three-dots {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+}
+
+.card, .card:hover, .card:focus {
+  transform: none !important;
+  transition: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid #dee2e6;
+  width: 100%;
+}
+
+img {
+  user-select: none;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

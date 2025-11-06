@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2d9b67a497.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div class="main-wrapper">
+  <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+  <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+  <i class="fas fa-bars fa-lg"></i> Menu
+  </button>
+<form class="d-flex align-items-center ms-auto" role="search" style="gap:10px;">
+  <input 
+    class="form-control me-2 search-box" 
+    type="search" 
+    placeholder="Search"
+  >
+
+  <i class="fas fa-moon fa-lg text-secondary theme-icon"></i>
+
+  <i class="fas fa-bell fa-lg text-secondary me-2"></i>
+
+  <img 
+    src="images/WhatsApp Image 2025-09-25 at 12.48.34 PM.jpeg"
+    class="profile-pic"
+    style="width:40px; height:40px; border-radius:50%; object-fit:cover;"
+  >
+</form>
+  </div>
+  </nav>
+  <div class="sidebar d-none d-lg-block text-white bg-dark p-3">
+  <img src="images/logo (1).png" alt="" class="img-fluid mb-3 px-3">
+  <a href="index.html"><i class="fas fa-home me-2 text-white"></i> Dashboard</a>
+  <a href="scan-upload.html"><i class="fas fa-camera me-2 text-white"></i> Scan Documents</a>
+  <a href="osr.html"><i class="fas fa-file-alt me-2 text-white"></i> OCR Documents</a>
+  <a href="retrieve.html"><i class="fas fa-search me-2 text-white"></i> Retrieve Documents</a>
+  <a href="all-documents.html"><i class="fas fa-folder-open me-2 text-white"></i> All Documents</a>
+  <a href="archive-documents.html"><i class="fas fa-archive me-2 text-white"></i> Archive Documents</a>
+  <a href="user.html"><i class="fas fa-users-cog me-2 text-white"></i> User Management</a>
+  <a href="audit-document.html"><i class="fas fa-shield-alt me-2 text-white"></i> Audit Documents</a>
+  <a href="settings.html"><i class="fas fa-cog me-2 text-white"></i> Settings</a>
+  </div>
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
+  <div class="offcanvas-header">
+  <h5 class="offcanvas-title">Menu</h5>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+  <a href="index.html" class="d-block mb-2 text-white"><i class="fas fa-home me-2"></i> Dashboard</a>
+  <a href="scan-upload.html" class="d-block mb-2 text-white"><i class="fas fa-camera me-2"></i> Scan Documents</a>
+  <a href="osr.html" class="d-block mb-2 text-white"><i class="fas fa-file-alt me-2"></i> OCR Documents</a>
+  <a href="retrieve.html" class="d-block mb-2 text-white"><i class="fas fa-search me-2"></i> Retrieve Documents</a>
+  <a href="all-documents.html" class="d-block mb-2 text-white"><i class="fas fa-folder-open me-2"></i> All Documents</a>
+  <a href="archive-documents.html" class="d-block mb-2 text-white"><i class="fas fa-archive me-2"></i> Archive Documents</a>
+  <a href="user.html" class="d-block mb-2 text-white"><i class="fas fa-users-cog me-2"></i> User Management</a>
+  <a href="audit-document.html" class="d-block mb-2 text-white"><i class="fas fa-shield-alt me-2"></i> Audit Documents</a>
+  <a href="settings.html" class="d-block mb-2 text-white"><i class="fas fa-cog me-2"></i> Settings</a>
+  </div>
+  </div>>
+  <div class="sidebar d-none d-lg-block text-white">
+  <img src="images/logo (1).png" alt="" class="img-fluid mb-3 px-3">
+  <a href="index.html"><i class="fas fa-home me-2 text-white"></i> Dashboard</a>
+  <a href="scan-upload.html"><i class="fas fa-camera me-2 text-white"></i> Scan Documents</a>
+  <a href="osr.html"><i class="fas fa-file-alt me-2 text-white"></i> OCR Documents</a>
+  <a href="retrieve.html"><i class="fas fa-search me-2 text-white"></i> Retrieve Documents</a>
+  <a href="all-documents.html"><i class="fas fa-folder-open me-2 text-white"></i> All Documents</a>
+  <a href="archive-documents.html"><i class="fas fa-archive me-2 text-white"></i> Archive Documents</a>
+  <a href="user.html"><i class="fas fa-users-cog me-2 text-white"></i> User Management</a>
+  <a href="audit-document.html"><i class="fas fa-shield-alt me-2 text-white"></i> Audit Documents</a>
+  <a href="settings.html"><i class="fas fa-cog me-2 text-white"></i> Settings</a>
+  </div>
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+  <h5 class="offcanvas-title">DMS Menu</h5>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+  <a class="d-flex justify-content-between align-items-center text-white text-decoration-none"
+  data-bs-toggle="collapse" href="#menuOptions" role="button" aria-expanded="false" aria-controls="menuOptions">
+  <span><i class="fas fa-bars me-2"></i> Menu Options</span>
+  <i class="fas fa-chevron-down"></i>
+  </a>
+  <div class="collapse mt-2" id="menuOptions">
+  <nav class="nav flex-column">
+  <a class="nav-link text-white" href="#"><i class="fas fa-home me-2"></i> Dashboard</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-camera me-2"></i> Scan Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-file-alt me-2"></i> OCR Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-search me-2"></i> Retrieve Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-folder-open me-2"></i> All Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-archive me-2"></i> Archive Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-users-cog me-2"></i> User Management</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-shield-alt me-2"></i> Audit Documents</a>
+  <a class="nav-link text-white" href="#"><i class="fas fa-cog me-2"></i> Settings</a>
+  </nav>
+  </div>
+  </div>
+  </div>
+  <div class="content">
+    <body class="bg-light">
+  </head>
+  <div id="mainContent" class="container py-1">
+  <div class="d-flex justify-content-between align-items-center ">
+  <h5 class="fw-bold">All Document</h5>
+  <button class="btn btn-success" id="openFormBtn">Add New Document</button>
+  </div>
+  </div>
+  <div id="addDocumentSection">
+  <div class="container">
+  <div class="bg-white p-4 rounded shadow-sm">
+  <h5 class="fw-bold ">Add New Document</h5>
+  <hr>
+  <form>
+  <div class="row g-3 mb-3">
+  <div class="col-md-3 text-center">
+  <label class="form-label d-block mb-1 text-start">Upload Your File Here</label>
+  <div class="border rounded py-2 px-3 d-inline-block w-100" style="cursor: pointer;">
+  <span>Upload File</span>
+  <span class="fw-bold" style="font-size: 20px; margin-left: 5px;">+</span>
+  </div>
+  </div>
+  <div class="col-md-3">
+  <label class="form-label">Name</label>
+  <input type="text" class="form-control" placeholder="Enter name">
+  </div>
+  <div class="col-md-3">
+  <label class="form-label">Category</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  <div class="col-md-3">
+  <label class="form-label">Storage</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  </div>
+  <div class="row g-3 mb-3">
+  <div class="col-md-3">
+  <label class="form-label">Document Status</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  <div class="col-md-3">
+  <label class="form-label">Client</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  <div class="col-md-6">
+  <label class="form-label">Meta Tags</label>
+  <input type="text" class="form-control" placeholder="Type here">
+  </div>
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Description</label>
+  <textarea class="form-control" rows="4" placeholder="Write description here..."></textarea>
+  </div>
+  <div class="row g-3 mb-4">
+  <div class="col-md-6">
+  <label class="form-label">Assign/share role with</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  <div class="col-md-6">
+  <label class="form-label">Assign/share User with</label>
+  <select class="form-select">
+  <option>Select</option>
+  </select>
+  </div>
+  </div>
+  <div class="text-end">
+  <button type="button" class="btn btn-outline-success me-2" id="cancelFormBtn">Cancel</button>
+  <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  <hr class="mt-2 mb-2"> 
+<style>
+  .logo-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #00b894;
+    padding: 4px;
+    background-color: #f8f9fa; 
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); 
+  }
+
+  .card-kpi {
+    position: relative;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: 0.3s ease;
+    overflow: hidden;
+    min-height: 160px; 
+    border-radius: 30px;
+  }
+
+  .card-kpi::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: -15px; 
+    background: rgba(0, 0, 0, 0.05); 
+    border-radius: 12px;
+    z-index: 0;
+  }
+</style>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="card card-kpi">
+        <img src="images/images (2).png" class="logo-circle">
+        <h6>650,000</h6>
+        <p class="small">Documents scanned</p>
+        <p class="text-success fw-bold small" style="margin-top: -13px;">+95%</p>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card card-kpi">
+        <img src="images/pngtree-zip-file-document-icon-png-image_954792.jpg" class="logo-circle">
+        <h6>2,300</h6>
+        <p class="small">Uploaded today</p>
+        <p class="text-success fw-bold small" style="margin-top: -13px;">+5%</p>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card card-kpi">
+        <img src="images/images (1).png" class="logo-circle">
+        <h6>30,000</h6>
+        <p class="small">Incomplete</p>
+        <p class="text-success fw-bold small" style="margin-top: -13px;">+14%</p>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card card-kpi">
+        <img src="images/images (2).png" class="logo-circle">
+        <h6>12,500</h6>
+        <p class="small">Pending Documents</p>
+        <p class="text-success fw-bold small" style="margin-top: -13px;">+8%</p>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card card-kpi">
+        <img src="images/PDF_file_icon.svg.png" class="logo-circle">
+        <h6>5,800</h6>
+        <p class="small">Processed</p>
+        <p class="text-success fw-bold small" style="margin-top: -13px;">+12%</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="row mt-4">
+<div class="col-md-6 col-lg-3 mb-0 px-0">
+  <div class="card p-3">
+    <div class="recomended shadow shadow-lg p-3">
+    <h6 class="border-bottom pb-2 mb-3">Recent Documents</h6>
+    <ul class="list-group">
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-file-pdf text-danger fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Construction Confirmation.pdf</div>
+          <small class="text-muted">3.2 MB • 11:24 AM</small><br>
+          <small class="text-success">Today</small>
+        </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-file-word text-primary fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Meeting Notes.docx</div>
+          <small class="text-muted">1.1 MB • 10:15 AM</small><br>
+          <small class="text-success">Today</small>
+        </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-file-excel text-success fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Finance Report.xlsx</div>
+          <small class="text-muted">2.4 MB • 9:00 AM</small><br>
+          <small class="text-success">Today</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 mb-0 px-0">
+  <div class="card p-3">
+    <div class="recomended shadow shadow-lg p-3">
+    <h6 class="border-bottom pb-2 mb-3">Recent Activities</h6>
+    <ul class="list-group">
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-check-circle text-success fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Construction Confirmation.pdf</div>
+          <small class="text-success">Approved</small><br>
+          <small class="text-muted">3.2 MB • 11:24 AM</small>
+        </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-times-circle text-danger fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Meeting Notes.docx</div>
+          <small class="text-danger">Rejected</small><br>
+          <small class="text-muted">1.1 MB • 10:15 AM</small>
+        </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start py-2">
+        <i class="fas fa-clock text-warning fs-6 me-2"></i>
+        <div class="small">
+          <div class="fw-bold fs-8">Finance Report.xlsx</div>
+          <small class="text-warning">Pending</small><br>
+          <small class="text-muted">2.4 MB • 9:00 AM</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+  <div class="col-lg-6 mb-3">
+  <div class="card p-2 analysis-card">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+  <h6 class="mb-0">Analysis</h6>
+  <select class="form-select form-select-sm" style="width: 150px;">
+  <option>Document Flow</option>
+  <option>Users</option>
+  <option>Stats</option>
+  </select>
+  </div>
+  <canvas id="docChart"></canvas>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+    <script>
+  const openFormBtn = document.getElementById("openFormBtn");
+  const cancelFormBtn = document.getElementById("cancelFormBtn");
+  const mainContent = document.getElementById("mainContent");
+  const addDocumentSection = document.getElementById("addDocumentSection");
+
+  openFormBtn.addEventListener("click", () => {
+    mainContent.style.display = "none";
+    addDocumentSection.style.display = "block";
+  });
+
+  cancelFormBtn.addEventListener("click", () => {
+    addDocumentSection.style.display = "none";
+    mainContent.style.display = "block";
+  });
+</script>
+<script>
+  const ctx = document.getElementById('docChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Acc', 'HR', 'Finance', 'Media'],
+      datasets: [
+        {
+          label: 'Approved',
+          data: [12, 5, 9, 10],
+          backgroundColor: '#28a745',
+          borderRadius: {
+            topLeft: 20,
+            topRight: 20,
+            bottomLeft: 20,
+            bottomRight: 20
+          }
+        },
+        {
+          label: 'Pending',
+          data: [8, 2, 7, 4],
+          backgroundColor: '#ffc107',
+          borderRadius: {
+            topLeft: 20,
+            topRight: 20,
+            bottomLeft: 20,
+            bottomRight: 20
+          }
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: { color: '#000' },
+          barPercentage: 1.5,
+          categoryPercentage: 0.6
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: { display: false }
+        }
+      },
+      layout: {
+        padding: {
+          top: 30,
+          bottom: 80
+        }
+      }
+    },
+    plugins: [{
+      id: 'topBottomLines',
+      afterDraw: (chart) => {
+        const { ctx, chartArea } = chart;
+        ctx.save();
+        ctx.strokeStyle = '#ccc';
+        ctx.lineWidth = 3;
+        const gap = 10;
+        ctx.beginPath();
+        ctx.moveTo(chartArea.left, chartArea.top - gap);
+        ctx.lineTo(chartArea.right, chartArea.top - gap);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(chartArea.left, chartArea.bottom + gap);
+        ctx.lineTo(chartArea.right, chartArea.bottom + gap);
+        ctx.stroke();
+        ctx.restore();
+      }
+    }]
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
